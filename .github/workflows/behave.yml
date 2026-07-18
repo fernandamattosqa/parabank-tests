@@ -38,9 +38,31 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run Behave tests
+        id: behave
+        continue-on-error: true
         run: |
           mkdir -p reports
           python -m behave --format plain --out reports/behave-ci.txt
+
+      - name: Summarize test results
+        if: always()
+        run: |
+          echo "## Behave test summary" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          if [ -f reports/behave-ci.txt ]; then
+            echo "### Execution log" >> "$GITHUB_STEP_SUMMARY"
+            tail -n 20 reports/behave-ci.txt >> "$GITHUB_STEP_SUMMARY"
+          fi
+          if [ -f reports/behave-ci.txt ]; then
+            echo "" >> "$GITHUB_STEP_SUMMARY"
+            echo "### Result" >> "$GITHUB_STEP_SUMMARY"
+            grep -E "(features passed|scenarios passed|steps passed|failed|error|skipped)" reports/behave-ci.txt | tail -n 10 >> "$GITHUB_STEP_SUMMARY" || true
+          fi
+          if [ "${{ steps.behave.outcome }}" = "success" ]; then
+            echo "✅ Behave completed successfully." >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "❌ Behave completed with failures or errors." >> "$GITHUB_STEP_SUMMARY"
+          fi
 
       - name: Upload test reports
         if: always()
