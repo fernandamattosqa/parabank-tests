@@ -28,7 +28,9 @@ jobs:
       - name: Install system dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y chromium-browser chromium-driver
+          (sudo apt-get install -y chromium-browser chromium-driver || sudo apt-get install -y chromium chromium-driver)
+          if [ -x /usr/bin/chromedriver ]; then echo "CHROMEDRIVER_PATH=/usr/bin/chromedriver" >> "$GITHUB_ENV"; fi
+          if [ -x /usr/lib/chromium-browser/chromedriver ]; then echo "CHROMEDRIVER_PATH=/usr/lib/chromium-browser/chromedriver" >> "$GITHUB_ENV"; fi
 
       - name: Install Python dependencies
         run: |
@@ -39,3 +41,10 @@ jobs:
         run: |
           mkdir -p reports
           python -m behave --format plain --out reports/behave-ci.txt
+
+      - name: Upload test reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: behave-reports
+          path: reports/

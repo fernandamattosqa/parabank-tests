@@ -2,6 +2,7 @@ import os
 
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
 
 from config.settings import DEFAULT_TIMEOUT, HEADLESS
 
@@ -29,7 +30,8 @@ def create_driver(headless=False):
 
     chrome_driver_path = os.getenv("CHROMEDRIVER_PATH")
     if chrome_driver_path:
-        driver = webdriver.Chrome(executable_path=chrome_driver_path, options=options)
+        service = Service(executable_path=chrome_driver_path)
+        driver = webdriver.Chrome(service=service, options=options)
     else:
         driver = webdriver.Chrome(options=options)
     driver.implicitly_wait(DEFAULT_TIMEOUT)
