@@ -1,0 +1,48 @@
+Feature: Login no ParaBank # features/login.feature:1
+
+  Scenario Outline: Tentativas de login com diferentes entradas -- @1.1   # features/login.feature:11
+    Given que estou na página de login                                    # features/steps/common_steps.py:18
+    When eu informo o usuário "userauto123" e senha "senha123"            # features/steps/common_steps.py:57
+    And eu clico em logar                                                 # features/steps/common_steps.py:106
+    Then devo ver "Accounts Overview"                                     # features/steps/common_steps.py:122
+      ASSERT FAILED: Usuário não entrou na área logada
+
+----
+CAPTURED LOG: before_scenario
+LOG_INFO:parabank-tests: Iniciando cenário: Tentativas de login com diferentes entradas -- @1.1  (headless=False)
+----
+CAPTURED LOG: after_scenario
+LOG_INFO:parabank-tests: Cenário finalizado: Tentativas de login com diferentes entradas -- @1.1
+---- CAPTURED_SCENARIO_OUTPUT_END ----
+
+  Scenario Outline: Tentativas de login com diferentes entradas -- @1.2   # features/login.feature:12
+    Given que estou na página de login                                    # features/steps/common_steps.py:18
+    When eu informo o usuário "usuario_invalido" e senha "senha_errada"   # features/steps/common_steps.py:57
+    And eu clico em logar                                                 # features/steps/common_steps.py:106
+    Then devo ver "Error"                                                 # features/steps/common_steps.py:122
+
+  Scenario Outline: Tentativas de login com diferentes entradas -- @1.3   # features/login.feature:13
+    Given que estou na página de login                                    # features/steps/common_steps.py:18
+    When eu informo o usuário "nonexistentuser" e senha "senha_errada"    # features/steps/common_steps.py:57
+    And eu clico em logar                                                 # features/steps/common_steps.py:106
+    Then devo ver "Error"                                                 # features/steps/common_steps.py:122
+
+  Scenario Outline: Tentativas de login com diferentes entradas -- @1.4   # features/login.feature:14
+    Given que estou na página de login                                    # features/steps/common_steps.py:18
+    When eu informo o usuário "" e senha ""                               # None
+    And eu clico em logar                                                 # None
+    Then devo ver "Error"                                                 # None
+----
+CAPTURED LOG: before_scenario
+LOG_INFO:parabank-tests: Iniciando cenário: Tentativas de login com diferentes entradas -- @1.4  (headless=False)
+----
+CAPTURED LOG: after_scenario
+LOG_INFO:parabank-tests: Cenário finalizado: Tentativas de login com diferentes entradas -- @1.4
+---- CAPTURED_SCENARIO_OUTPUT_END ----
+
+  Scenario: Logout do usuário                                  # features/login.feature:16
+    Given que estou na página de login                         # features/steps/common_steps.py:18
+    When eu informo o usuário "userauto123" e senha "senha123" # features/steps/common_steps.py:57
+    And eu clico em logar                                      # features/steps/common_steps.py:106
+    Then devo realizar logout                                  # features/steps/common_steps.py:146
+

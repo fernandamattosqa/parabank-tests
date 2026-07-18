@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.venv/
+reports/screenshots/
+reports/allure-results/
+reports/allure-report/
+*.log

@@ -1,0 +1,1427 @@
+[
+{
+  "elements": [
+    {
+      "keyword": "Scenario",
+      "location": "features/invalid_registration.feature:3",
+      "name": "Registro com dados incompletos",
+      "status": "passed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "features/invalid_registration.feature:4",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/common_steps.py:12"
+          },
+          "name": "que estou na p\u00e1gina de registro",
+          "result": {
+            "duration": 3.1116273403167725,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "features/invalid_registration.feature:5",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/common_steps.py:85"
+          },
+          "name": "eu preencho um formul\u00e1rio incompleto",
+          "result": {
+            "duration": 5.264479398727417,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "And",
+          "location": "features/invalid_registration.feature:6",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/common_steps.py:80"
+          },
+          "name": "eu envio o formul\u00e1rio de registro",
+          "result": {
+            "duration": 1.5199782848358154,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "features/invalid_registration.feature:7",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/common_steps.py:101"
+          },
+          "name": "devo ver uma mensagem de erro de valida\u00e7\u00e3o",
+          "result": {
+            "duration": 0.07645869255065918,
+            "status": "passed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    }
+  ],
+  "keyword": "Feature",
+  "location": "features/invalid_registration.feature:1",
+  "name": "Registro inv\u00e1lido no ParaBank",
+  "status": "passed",
+  "tags": []
+,,
+
+{
+  "elements": [
+    {
+      "keyword": "Scenario Outline",
+      "location": "features/login.feature:11",
+      "name": "Tentativas de login com diferentes entradas -- @1.1 ",
+      "status": "passed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "features/login.feature:4",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/common_steps.py:18"
+          },
+          "name": "que estou na p\u00e1gina de login",
+          "result": {
+            "duration": 14.184752702713013,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "features/login.feature:5",
+          "match": {
+            "arguments": [
+              {
+                "name": "username",
+                "value": "userauto123"
+              },
+              {
+                "name": "password",
+                "value": "senha123"
+              }
+            ],
+            "location": "features/steps/common_steps.py:57"
+          },
+          "name": "eu informo o usu\u00e1rio \"userauto123\" e senha \"senha123\"",
+          "result": {
+            "duration": 6.147477865219116,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "And",
+          "location": "features/login.feature:6",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/common_steps.py:106"
+          },
+          "name": "eu clico em logar",
+          "result": {
+            "duration": 2.4865193367004395,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "features/login.feature:7",
+          "match": {
+            "arguments": [
+              {
+                "name": "expected_message",
+                "value": "Accounts Overview"
+              }
+            ],
+            "location": "features/steps/common_steps.py:122"
+          },
+          "name": "devo ver \"Accounts Overview\"",
+          "result": {
+            "duration": 0.06235623359680176,
+            "status": "passed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    },
+    {
+      "keyword": "Scenario Outline",
+      "location": "features/login.feature:12",
+      "name": "Tentativas de login com diferentes entradas -- @1.2 ",
+      "status": "passed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "features/login.feature:4",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/common_steps.py:18"
+          },
+          "name": "que estou na p\u00e1gina de login",
+          "result": {
+            "duration": 14.177364349365234,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "features/login.feature:5",
+          "match": {
+            "arguments": [
+              {
+                "name": "username",
+                "value": "usuario_invalido"
+              },
+              {
+                "name": "password",
+                "value": "senha_errada"
+              }
+            ],
+            "location": "features/steps/common_steps.py:57"
+          },
+          "name": "eu informo o usu\u00e1rio \"usuario_invalido\" e senha \"senha_errada\"",
+          "result": {
+            "duration": 1.2358450889587402,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "And",
+          "location": "features/login.feature:6",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/common_steps.py:106"
+          },
+          "name": "eu clico em logar",
+          "result": {
+            "duration": 2.0036420822143555,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "features/login.feature:7",
+          "match": {
+            "arguments": [
+              {
+                "name": "expected_message",
+                "value": "Error"
+              }
+            ],
+            "location": "features/steps/common_steps.py:122"
+          },
+          "name": "devo ver \"Error\"",
+          "result": {
+            "duration": 0.32912397384643555,
+            "status": "passed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    },
+    {
+      "keyword": "Scenario Outline",
+      "location": "features/login.feature:13",
+      "name": "Tentativas de login com diferentes entradas -- @1.3 ",
+      "status": "passed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "features/login.feature:4",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/common_steps.py:18"
+          },
+          "name": "que estou na p\u00e1gina de login",
+          "result": {
+            "duration": 17.11031222343445,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "features/login.feature:5",
+          "match": {
+            "arguments": [
+              {
+                "name": "username",
+                "value": "nonexistentuser"
+              },
+              {
+                "name": "password",
+                "value": "senha_errada"
+              }
+            ],
+            "location": "features/steps/common_steps.py:57"
+          },
+          "name": "eu informo o usu\u00e1rio \"nonexistentuser\" e senha \"senha_errada\"",
+          "result": {
+            "duration": 4.145493507385254,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "And",
+          "location": "features/login.feature:6",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/common_steps.py:106"
+          },
+          "name": "eu clico em logar",
+          "result": {
+            "duration": 1.859004259109497,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "features/login.feature:7",
+          "match": {
+            "arguments": [
+              {
+                "name": "expected_message",
+                "value": "Error"
+              }
+            ],
+            "location": "features/steps/common_steps.py:122"
+          },
+          "name": "devo ver \"Error\"",
+          "result": {
+            "duration": 0.5532667636871338,
+            "status": "passed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    },
+    {
+      "keyword": "Scenario Outline",
+      "location": "features/login.feature:14",
+      "name": "Tentativas de login com diferentes entradas -- @1.4 ",
+      "status": "error",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "features/login.feature:4",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/common_steps.py:18"
+          },
+          "name": "que estou na p\u00e1gina de login",
+          "result": {
+            "duration": 13.249071598052979,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "features/login.feature:5",
+          "name": "eu informo o usu\u00e1rio \"\" e senha \"\"",
+          "result": {
+            "duration": 0,
+            "status": "undefined"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "And",
+          "location": "features/login.feature:6",
+          "name": "eu clico em logar",
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "features/login.feature:7",
+          "name": "devo ver \"Error\"",
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    },
+    {
+      "keyword": "Scenario",
+      "location": "features/login.feature:16",
+      "name": "Logout do usu\u00e1rio",
+      "status": "passed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "features/login.feature:17",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/common_steps.py:18"
+          },
+          "name": "que estou na p\u00e1gina de login",
+          "result": {
+            "duration": 14.800925731658936,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "features/login.feature:18",
+          "match": {
+            "arguments": [
+              {
+                "name": "username",
+                "value": "userauto123"
+              },
+              {
+                "name": "password",
+                "value": "senha123"
+              }
+            ],
+            "location": "features/steps/common_steps.py:57"
+          },
+          "name": "eu informo o usu\u00e1rio \"userauto123\" e senha \"senha123\"",
+          "result": {
+            "duration": 0.7105824947357178,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "And",
+          "location": "features/login.feature:19",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/common_steps.py:106"
+          },
+          "name": "eu clico em logar",
+          "result": {
+            "duration": 5.050134897232056,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "features/login.feature:20",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/common_steps.py:146"
+          },
+          "name": "devo realizar logout",
+          "result": {
+            "duration": 2.983950138092041,
+            "status": "passed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    }
+  ],
+  "keyword": "Feature",
+  "location": "features/login.feature:1",
+  "name": "Login no ParaBank",
+  "status": "error",
+  "tags": []
+},
+
+{
+  "elements": [
+    {
+      "keyword": "Scenario Outline",
+      "location": "features/register.feature:11",
+      "name": "Registro com diferentes valida\u00e7\u00f5es de entrada -- @1.1 ",
+      "status": "failed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "features/register.feature:4",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/common_steps.py:12"
+          },
+          "name": "que estou na p\u00e1gina de registro",
+          "result": {
+            "duration": 3.586986541748047,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "features/register.feature:5",
+          "match": {
+            "arguments": [
+              {
+                "name": "first_name",
+                "value": "Fernanda"
+              },
+              {
+                "name": "last_name",
+                "value": "Teste"
+              },
+              {
+                "name": "address",
+                "value": "Rua Exemplo 123"
+              },
+              {
+                "name": "city",
+                "value": "Santo Andr\u00e9"
+              },
+              {
+                "name": "state",
+                "value": "SP"
+              },
+              {
+                "name": "zip_code",
+                "value": "09000-000"
+              },
+              {
+                "name": "phone",
+                "value": "11999999999"
+              },
+              {
+                "name": "ssn",
+                "value": "123456789"
+              },
+              {
+                "name": "username",
+                "value": "userauto123"
+              },
+              {
+                "name": "password",
+                "value": "senha123"
+              }
+            ],
+            "location": "features/steps/common_steps.py:64"
+          },
+          "name": "eu preencho o formul\u00e1rio com os dados:Fernanda,Teste,Rua Exemplo 123,Santo Andr\u00e9,SP,09000-000,11999999999,123456789,userauto123,senha123",
+          "result": {
+            "duration": 6.15811014175415,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "And",
+          "location": "features/register.feature:6",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/common_steps.py:80"
+          },
+          "name": "eu envio o formul\u00e1rio de registro",
+          "result": {
+            "duration": 1.9563097953796387,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "features/register.feature:7",
+          "match": {
+            "arguments": [
+              {
+                "name": "expected_message",
+                "value": "Your account was created successfully"
+              }
+            ],
+            "location": "features/steps/common_steps.py:122"
+          },
+          "name": "devo ver \"Your account was created successfully\"",
+          "result": {
+            "duration": 0.04454684257507324,
+            "error_message": "ASSERT FAILED: Mensagem esperada n\u00e3o encontrada: Your account was created successfully",
+            "status": "failed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    },
+    {
+      "keyword": "Scenario Outline",
+      "location": "features/register.feature:12",
+      "name": "Registro com diferentes valida\u00e7\u00f5es de entrada -- @1.2 ",
+      "status": "error",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "features/register.feature:4",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/common_steps.py:12"
+          },
+          "name": "que estou na p\u00e1gina de registro",
+          "result": {
+            "duration": 2.7672500610351562,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "features/register.feature:5",
+          "name": "eu preencho o formul\u00e1rio com os dados:,Teste,Rua Exemplo 123,Santo Andr\u00e9,SP,09000-000,11999999999,123456789,,",
+          "result": {
+            "duration": 0,
+            "status": "undefined"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "And",
+          "location": "features/register.feature:6",
+          "name": "eu envio o formul\u00e1rio de registro",
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "features/register.feature:7",
+          "name": "devo ver \"Error\"",
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    },
+    {
+      "keyword": "Scenario Outline",
+      "location": "features/register.feature:13",
+      "name": "Registro com diferentes valida\u00e7\u00f5es de entrada -- @1.3 ",
+      "status": "passed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "features/register.feature:4",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/common_steps.py:12"
+          },
+          "name": "que estou na p\u00e1gina de registro",
+          "result": {
+            "duration": 5.71472692489624,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "features/register.feature:5",
+          "match": {
+            "arguments": [
+              {
+                "name": "first_name",
+                "value": "Fernanda"
+              },
+              {
+                "name": "last_name",
+                "value": "Teste"
+              },
+              {
+                "name": "address",
+                "value": "Rua Exemplo 123"
+              },
+              {
+                "name": "city",
+                "value": "Santo Andr\u00e9"
+              },
+              {
+                "name": "state",
+                "value": "SP"
+              },
+              {
+                "name": "zip_code",
+                "value": "09000-000"
+              },
+              {
+                "name": "phone",
+                "value": "abc"
+              },
+              {
+                "name": "ssn",
+                "value": "123456789"
+              },
+              {
+                "name": "username",
+                "value": "useremail"
+              },
+              {
+                "name": "password",
+                "value": "senha123"
+              }
+            ],
+            "location": "features/steps/common_steps.py:64"
+          },
+          "name": "eu preencho o formul\u00e1rio com os dados:Fernanda,Teste,Rua Exemplo 123,Santo Andr\u00e9,SP,09000-000,abc,123456789,useremail,senha123",
+          "result": {
+            "duration": 11.651188135147095,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "And",
+          "location": "features/register.feature:6",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/common_steps.py:80"
+          },
+          "name": "eu envio o formul\u00e1rio de registro",
+          "result": {
+            "duration": 1.5299091339111328,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "features/register.feature:7",
+          "match": {
+            "arguments": [
+              {
+                "name": "expected_message",
+                "value": "Error"
+              }
+            ],
+            "location": "features/steps/common_steps.py:122"
+          },
+          "name": "devo ver \"Error\"",
+          "result": {
+            "duration": 0.10069417953491211,
+            "status": "passed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    },
+    {
+      "keyword": "Scenario Outline",
+      "location": "features/register.feature:14",
+      "name": "Registro com diferentes valida\u00e7\u00f5es de entrada -- @1.4 ",
+      "status": "passed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "features/register.feature:4",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/common_steps.py:12"
+          },
+          "name": "que estou na p\u00e1gina de registro",
+          "result": {
+            "duration": 2.912187099456787,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "features/register.feature:5",
+          "match": {
+            "arguments": [
+              {
+                "name": "first_name",
+                "value": "Fernanda"
+              },
+              {
+                "name": "last_name",
+                "value": "Teste"
+              },
+              {
+                "name": "address",
+                "value": "Rua Exemplo 123"
+              },
+              {
+                "name": "city",
+                "value": "Santo Andr\u00e9"
+              },
+              {
+                "name": "state",
+                "value": "SP"
+              },
+              {
+                "name": "zip_code",
+                "value": "09000-000"
+              },
+              {
+                "name": "phone",
+                "value": "11999999999"
+              },
+              {
+                "name": "ssn",
+                "value": "123456789"
+              },
+              {
+                "name": "username",
+                "value": "userweak"
+              },
+              {
+                "name": "password",
+                "value": "123"
+              }
+            ],
+            "location": "features/steps/common_steps.py:64"
+          },
+          "name": "eu preencho o formul\u00e1rio com os dados:Fernanda,Teste,Rua Exemplo 123,Santo Andr\u00e9,SP,09000-000,11999999999,123456789,userweak,123",
+          "result": {
+            "duration": 7.480425596237183,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "And",
+          "location": "features/register.feature:6",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/common_steps.py:80"
+          },
+          "name": "eu envio o formul\u00e1rio de registro",
+          "result": {
+            "duration": 4.324677467346191,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "features/register.feature:7",
+          "match": {
+            "arguments": [
+              {
+                "name": "expected_message",
+                "value": "Error"
+              }
+            ],
+            "location": "features/steps/common_steps.py:122"
+          },
+          "name": "devo ver \"Error\"",
+          "result": {
+            "duration": 0.0981290340423584,
+            "status": "passed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    },
+    {
+      "keyword": "Scenario Outline",
+      "location": "features/register.feature:15",
+      "name": "Registro com diferentes valida\u00e7\u00f5es de entrada -- @1.5 ",
+      "status": "passed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "features/register.feature:4",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/common_steps.py:12"
+          },
+          "name": "que estou na p\u00e1gina de registro",
+          "result": {
+            "duration": 2.759978771209717,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "features/register.feature:5",
+          "match": {
+            "arguments": [
+              {
+                "name": "first_name",
+                "value": "Fernanda"
+              },
+              {
+                "name": "last_name",
+                "value": "Teste"
+              },
+              {
+                "name": "address",
+                "value": "Rua Exemplo 123"
+              },
+              {
+                "name": "city",
+                "value": "Santo Andr\u00e9"
+              },
+              {
+                "name": "state",
+                "value": "SP"
+              },
+              {
+                "name": "zip_code",
+                "value": "09000-000"
+              },
+              {
+                "name": "phone",
+                "value": "11999999999"
+              },
+              {
+                "name": "ssn",
+                "value": "123456789"
+              },
+              {
+                "name": "username",
+                "value": "userauto123"
+              },
+              {
+                "name": "password",
+                "value": "senha123"
+              }
+            ],
+            "location": "features/steps/common_steps.py:64"
+          },
+          "name": "eu preencho o formul\u00e1rio com os dados:Fernanda,Teste,Rua Exemplo 123,Santo Andr\u00e9,SP,09000-000,11999999999,123456789,userauto123,senha123",
+          "result": {
+            "duration": 4.437769889831543,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "And",
+          "location": "features/register.feature:6",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/common_steps.py:80"
+          },
+          "name": "eu envio o formul\u00e1rio de registro",
+          "result": {
+            "duration": 1.3314025402069092,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "features/register.feature:7",
+          "match": {
+            "arguments": [
+              {
+                "name": "expected_message",
+                "value": "Error"
+              }
+            ],
+            "location": "features/steps/common_steps.py:122"
+          },
+          "name": "devo ver \"Error\"",
+          "result": {
+            "duration": 0.13303184509277344,
+            "status": "passed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    }
+  ],
+  "keyword": "Feature",
+  "location": "features/register.feature:1",
+  "name": "Cadastro no ParaBank",
+  "status": "failed",
+  "tags": []
+},
+
+{
+  "elements": [
+    {
+      "keyword": "Scenario Outline",
+      "location": "features/transfer.feature:12",
+      "name": "Tentativas de transfer\u00eancia com diferentes entradas -- @1.1 ",
+      "status": "error",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "features/transfer.feature:4",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/common_steps.py:24"
+          },
+          "name": "que estou logado com usu\u00e1rio v\u00e1lido",
+          "result": {
+            "duration": 18.809749364852905,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "And",
+          "location": "features/transfer.feature:5",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/common_steps.py:51"
+          },
+          "name": "estou na p\u00e1gina de Transfer Funds",
+          "result": {
+            "duration": 1.7385480403900146,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "features/transfer.feature:6",
+          "match": {
+            "arguments": [
+              {
+                "name": "from_account",
+                "value": "12345"
+              },
+              {
+                "name": "to_account",
+                "value": "54321"
+              },
+              {
+                "name": "amount",
+                "value": "100.00"
+              }
+            ],
+            "location": "features/steps/common_steps.py:112"
+          },
+          "name": "eu informo a conta origem \"12345\", conta destino \"54321\" e valor \"100.00\"",
+          "result": {
+            "duration": 10.282499551773071,
+            "status": "error"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "And",
+          "location": "features/transfer.feature:7",
+          "name": "eu envio a transfer\u00eancia",
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "features/transfer.feature:8",
+          "name": "devo ver \"Transfer Complete!\"",
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    },
+    {
+      "keyword": "Scenario Outline",
+      "location": "features/transfer.feature:13",
+      "name": "Tentativas de transfer\u00eancia com diferentes entradas -- @1.2 ",
+      "status": "error",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "features/transfer.feature:4",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/common_steps.py:24"
+          },
+          "name": "que estou logado com usu\u00e1rio v\u00e1lido",
+          "result": {
+            "duration": 16.869693517684937,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "And",
+          "location": "features/transfer.feature:5",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/common_steps.py:51"
+          },
+          "name": "estou na p\u00e1gina de Transfer Funds",
+          "result": {
+            "duration": 1.2981023788452148,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "features/transfer.feature:6",
+          "match": {
+            "arguments": [
+              {
+                "name": "from_account",
+                "value": "12345"
+              },
+              {
+                "name": "to_account",
+                "value": "54321"
+              },
+              {
+                "name": "amount",
+                "value": "999999"
+              }
+            ],
+            "location": "features/steps/common_steps.py:112"
+          },
+          "name": "eu informo a conta origem \"12345\", conta destino \"54321\" e valor \"999999\"",
+          "result": {
+            "duration": 10.075523853302002,
+            "status": "error"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "And",
+          "location": "features/transfer.feature:7",
+          "name": "eu envio a transfer\u00eancia",
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "features/transfer.feature:8",
+          "name": "devo ver \"Error\"",
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    },
+    {
+      "keyword": "Scenario Outline",
+      "location": "features/transfer.feature:14",
+      "name": "Tentativas de transfer\u00eancia com diferentes entradas -- @1.3 ",
+      "status": "error",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "features/transfer.feature:4",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/common_steps.py:24"
+          },
+          "name": "que estou logado com usu\u00e1rio v\u00e1lido",
+          "result": {
+            "duration": 11.382015943527222,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "And",
+          "location": "features/transfer.feature:5",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/common_steps.py:51"
+          },
+          "name": "estou na p\u00e1gina de Transfer Funds",
+          "result": {
+            "duration": 1.3004376888275146,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "features/transfer.feature:6",
+          "match": {
+            "arguments": [
+              {
+                "name": "from_account",
+                "value": "12345"
+              },
+              {
+                "name": "to_account",
+                "value": "54321"
+              },
+              {
+                "name": "amount",
+                "value": "0"
+              }
+            ],
+            "location": "features/steps/common_steps.py:112"
+          },
+          "name": "eu informo a conta origem \"12345\", conta destino \"54321\" e valor \"0\"",
+          "result": {
+            "duration": 10.071753978729248,
+            "status": "error"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "And",
+          "location": "features/transfer.feature:7",
+          "name": "eu envio a transfer\u00eancia",
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "features/transfer.feature:8",
+          "name": "devo ver \"Error\"",
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    },
+    {
+      "keyword": "Scenario Outline",
+      "location": "features/transfer.feature:15",
+      "name": "Tentativas de transfer\u00eancia com diferentes entradas -- @1.4 ",
+      "status": "error",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "features/transfer.feature:4",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/common_steps.py:24"
+          },
+          "name": "que estou logado com usu\u00e1rio v\u00e1lido",
+          "result": {
+            "duration": 19.52816128730774,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "And",
+          "location": "features/transfer.feature:5",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/common_steps.py:51"
+          },
+          "name": "estou na p\u00e1gina de Transfer Funds",
+          "result": {
+            "duration": 1.0837171077728271,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "features/transfer.feature:6",
+          "match": {
+            "arguments": [
+              {
+                "name": "from_account",
+                "value": "12345"
+              },
+              {
+                "name": "to_account",
+                "value": "54321"
+              },
+              {
+                "name": "amount",
+                "value": "-10"
+              }
+            ],
+            "location": "features/steps/common_steps.py:112"
+          },
+          "name": "eu informo a conta origem \"12345\", conta destino \"54321\" e valor \"-10\"",
+          "result": {
+            "duration": 10.07040810585022,
+            "status": "error"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "And",
+          "location": "features/transfer.feature:7",
+          "name": "eu envio a transfer\u00eancia",
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "features/transfer.feature:8",
+          "name": "devo ver \"Error\"",
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    },
+    {
+      "keyword": "Scenario Outline",
+      "location": "features/transfer.feature:16",
+      "name": "Tentativas de transfer\u00eancia com diferentes entradas -- @1.5 ",
+      "status": "error",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "features/transfer.feature:4",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/common_steps.py:24"
+          },
+          "name": "que estou logado com usu\u00e1rio v\u00e1lido",
+          "result": {
+            "duration": 34.54667592048645,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "And",
+          "location": "features/transfer.feature:5",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/common_steps.py:51"
+          },
+          "name": "estou na p\u00e1gina de Transfer Funds",
+          "result": {
+            "duration": 6.008599519729614,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "features/transfer.feature:6",
+          "match": {
+            "arguments": [
+              {
+                "name": "from_account",
+                "value": "12345"
+              },
+              {
+                "name": "to_account",
+                "value": "12345"
+              },
+              {
+                "name": "amount",
+                "value": "10"
+              }
+            ],
+            "location": "features/steps/common_steps.py:112"
+          },
+          "name": "eu informo a conta origem \"12345\", conta destino \"12345\" e valor \"10\"",
+          "result": {
+            "duration": 10.122713088989258,
+            "status": "error"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "And",
+          "location": "features/transfer.feature:7",
+          "name": "eu envio a transfer\u00eancia",
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "features/transfer.feature:8",
+          "name": "devo ver \"Error\"",
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    },
+    {
+      "keyword": "Scenario Outline",
+      "location": "features/transfer.feature:17",
+      "name": "Tentativas de transfer\u00eancia com diferentes entradas -- @1.6 ",
+      "status": "error",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "features/transfer.feature:4",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/common_steps.py:24"
+          },
+          "name": "que estou logado com usu\u00e1rio v\u00e1lido",
+          "result": {
+            "duration": 17.800483465194702,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "And",
+          "location": "features/transfer.feature:5",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/common_steps.py:51"
+          },
+          "name": "estou na p\u00e1gina de Transfer Funds",
+          "result": {
+            "duration": 1.1074461936950684,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "features/transfer.feature:6",
+          "match": {
+            "arguments": [
+              {
+                "name": "from_account",
+                "value": "99999"
+              },
+              {
+                "name": "to_account",
+                "value": "54321"
+              },
+              {
+                "name": "amount",
+                "value": "10"
+              }
+            ],
+            "location": "features/steps/common_steps.py:112"
+          },
+          "name": "eu informo a conta origem \"99999\", conta destino \"54321\" e valor \"10\"",
+          "result": {
+            "duration": 10.072271347045898,
+            "status": "error"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "And",
+          "location": "features/transfer.feature:7",
+          "name": "eu envio a transfer\u00eancia",
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "features/transfer.feature:8",
+          "name": "devo ver \"Error\"",
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    }
+  ],
+  "keyword": "Feature",
+  "location": "features/transfer.feature:1",
+  "name": "Transfer\u00eancia de Fundos",
+  "status": "error",
+  "tags": []
+}
+]
+
+]

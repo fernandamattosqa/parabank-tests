@@ -1,0 +1,23 @@
+<testsuite name="invalid_registration.Registro inválido no ParaBank" tests="1" errors="0" failures="0" skipped="0" time="9.972544" timestamp="2026-07-17T23:08:15.172401" hostname="Condado"><testcase classname="invalid_registration.Registro inválido no ParaBank" name="Registro com dados incompletos" status="passed" time="9.972544"><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Registro com dados incompletos
+    Given que estou na página de registro ... passed in 3.112s
+    When eu preencho um formulário incompleto ... passed in 5.264s
+    And eu envio o formulário de registro ... passed in 1.520s
+    Then devo ver uma mensagem de erro de validação ... passed in 0.076s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+]]>
+</system-err></testcase></testsuite>
