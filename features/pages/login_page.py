@@ -1,12 +1,14 @@
 from locators.login_locators import LoginLocators
 from .base_page import BasePage
-
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 class LoginPage(BasePage):
     def open_login_page(self):
-        self.open("/")
-        if self.is_logged_in():
-            return
+        self.open("/index.htm")
+        WebDriverWait(self.driver, 20).until(
+            EC.visibility_of_element_located(LoginLocators.USERNAME_INPUT)
+        )
 
     def fill_credentials(self, username, password):
         self.fill(LoginLocators.USERNAME_INPUT, username)
@@ -17,18 +19,28 @@ class LoginPage(BasePage):
         self.click_login_button()
 
     def click_login_button(self):
+        WebDriverWait(self.driver, 20).until(
+            EC.element_to_be_clickable(LoginLocators.LOGIN_BUTTON)
+        )
         self.click(LoginLocators.LOGIN_BUTTON)
 
     def get_error_message(self):
-        message = self.get_text(LoginLocators.ERROR_MESSAGE)
-        if message:
-            return message
-        if "Error" in self.get_page_source():
-            return "Error"
-        return ""
+        try:
+            element = WebDriverWait(self.driver, 10).until(
+                EC.visibility_of_element_located(LoginLocators.ERROR_MESSAGE)
+            )
+            return element.text.strip()
+        except:
+            return ""
 
     def is_logged_in(self):
-        return self.get_element_or_none(LoginLocators.ACCOUNTS_OVERVIEW) is not None or "Accounts Overview" in self.get_page_source()
+        try:
+            element = WebDriverWait(self.driver, 20).until(
+                EC.visibility_of_element_located(LoginLocators.WELCOME_MESSAGE)
+            )
+            return element.text.startswith("Welcome") or element.text.startswith("Accounts Overview")
+        except:
+            return False
 
     def logout(self):
         if self.get_element_or_none(LoginLocators.LOGOUT_LINK):
@@ -39,3 +51,9 @@ class LoginPage(BasePage):
                 if "index.htm" in self.driver.current_url:
                     self.driver.get(f"{self.base_url}/index.htm")
                 self.validate_url("index")
+
+    def get_login_title(self):
+        try:
+            return self.get_text(LoginLocators.LOGIN_TITLE)
+        except:
+            return ""

@@ -1,11 +1,16 @@
 from selenium.webdriver.common.by import By
 
-
-class TransferLocators:
-    FROM_ACCOUNT_INPUT = (By.ID, "fromAccountId")
-    TO_ACCOUNT_INPUT = (By.ID, "toAccountId")
-    AMOUNT_INPUT = (By.ID, "amount")
-    TRANSFER_BUTTON = (By.CSS_SELECTOR, "input[type='submit'].button[value='Transfer']")
-    TRANSFER_BUTTON_ALT = (By.CSS_SELECTOR, "input[value='Transfer']")
-    SUCCESS_MESSAGE = (By.CSS_SELECTOR, "h1")
-    ERROR_MESSAGE = (By.CSS_SELECTOR, ".error")
+class RegisterLocators:
+    FIRST_NAME = (By.ID, "customer.firstName")
+    LAST_NAME = (By.ID, "customer.lastName")
+    ADDRESS = (By.ID, "customer.address.street")
+    CITY = (By.ID, "customer.address.city")
+    STATE = (By.ID, "customer.address.state")
+    ZIP_CODE = (By.ID, "customer.address.zipCode")
+    PHONE = (By.ID, "customer.phoneNumber")
+    SSN = (By.ID, "customer.ssn")
+    USERNAME = (By.ID, "customer.username")
+    PASSWORD = (By.ID, "customer.password")
+    CONFIRM = (By.ID, "repeatedPassword")
+    REGISTER_BUTTON = (By.CSS_SELECTOR, "input[value='Register']")
+    SUCCESS_MESSAGE = (By.CSS_SELECTOR, "#rightPanel > p")

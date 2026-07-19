@@ -1,50 +1,86 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.support.ui import Select, WebDriverWait
-
-from locators.transfer_locators import TransferLocators
-from .base_page import BasePage
-
+from selenium.webdriver.support.ui import WebDriverWait
+from features.pages.base_page import BasePage
 
 class TransferPage(BasePage):
+    LINK_TRANSFER = (By.CSS_SELECTOR, "a[href='transfer.htm']")
+    AMOUNT_INPUT = (By.ID, "amount")  # ✅ corrigido
+    FROM_ACCOUNT_INPUT = (By.NAME, "fromAccountId")
+    TO_ACCOUNT_INPUT = (By.NAME, "toAccountId")
+    TRANSFER_BUTTON = (By.CSS_SELECTOR, "input[type='submit'][value='Transfer']")
+    SUCCESS_MESSAGE = (By.CSS_SELECTOR, "#showResult h1.title")  # ✅ painel de sucesso
+    ERROR_MESSAGE   = (By.CSS_SELECTOR, "#showError h1.title")   # ✅ painel de erro
+
     def open_transfer_page(self):
-        locators = [
-            (By.LINK_TEXT, "Transfer Funds"),
-            (By.PARTIAL_LINK_TEXT, "Transfer"),
-            (By.CSS_SELECTOR, "a[href*='transfer']"),
-        ]
-
-        clicked = False
-        for locator in locators:
-            try:
-                element = WebDriverWait(self.driver, 8).until(EC.element_to_be_clickable(locator))
-                element.click()
-                clicked = True
-                break
-            except Exception:
-                continue
-
-        if not clicked:
+        """Abre a página de Transfer Funds"""
+        try:
+            element = WebDriverWait(self.driver, 10).until(
+                EC.element_to_be_clickable(self.LINK_TRANSFER)
+            )
+            element.click()
+        except Exception:
             self.open("/transfer.htm")
 
-        self.wait_for_element(TransferLocators.AMOUNT_INPUT, timeout=10)
+        WebDriverWait(self.driver, 20).until(
+            EC.visibility_of_element_located(self.AMOUNT_INPUT)
+        )
 
-    def fill_transfer(self, from_account, to_account, amount):
-        self.wait_for_element(TransferLocators.FROM_ACCOUNT_INPUT)
-        self.wait_for_element(TransferLocators.TO_ACCOUNT_INPUT)
-        Select(self.driver.find_element(*TransferLocators.FROM_ACCOUNT_INPUT)).select_by_value(str(from_account))
-        Select(self.driver.find_element(*TransferLocators.TO_ACCOUNT_INPUT)).select_by_value(str(to_account))
-        self.fill(TransferLocators.AMOUNT_INPUT, str(amount))
+    def fill_transfer(self, amount: str, from_account: str = None, to_account: str = None):
+        """Preenche os campos de transferência"""
+        amount_field = WebDriverWait(self.driver, 10).until(
+            EC.visibility_of_element_located(self.AMOUNT_INPUT)
+        )
+        amount_field.clear()
+        amount_field.send_keys(str(amount))
+
+        if from_account:
+            from_field = WebDriverWait(self.driver, 10).until(
+                EC.visibility_of_element_located(self.FROM_ACCOUNT_INPUT)
+            )
+            from_field.send_keys(from_account)
+
+        if to_account:
+            to_field = WebDriverWait(self.driver, 10).until(
+                EC.visibility_of_element_located(self.TO_ACCOUNT_INPUT)
+            )
+            to_field.send_keys(to_account)
 
     def submit(self):
-        button = self.get_element_or_none(TransferLocators.TRANSFER_BUTTON)
-        if button:
-            button.click()
-            return
-        self.click(TransferLocators.TRANSFER_BUTTON_ALT)
+        """Clica no botão Transfer"""
+        button = WebDriverWait(self.driver, 10).until(
+            EC.element_to_be_clickable(self.TRANSFER_BUTTON)
+        )
+        button.click()
 
     def get_success_message(self):
-        return self.get_page_source()
+        """Captura mensagem de sucesso"""
+        try:
+            WebDriverWait(self.driver, 10).until(
+                EC.visibility_of_element_located((By.ID, "showResult"))
+            )
+            element = WebDriverWait(self.driver, 10).until(
+                EC.visibility_of_element_located(self.SUCCESS_MESSAGE)
+            )
+            text = element.text.strip()
+            if "Transfer Complete" in text:
+                return text
+            return None
+        except Exception:
+            return None
 
     def get_error_message(self):
-        return self.get_text(TransferLocators.ERROR_MESSAGE)
+        """Captura mensagem de erro (se existir)"""
+        try:
+            WebDriverWait(self.driver, 10).until(
+                EC.visibility_of_element_located((By.ID, "showError"))
+            )
+            element = WebDriverWait(self.driver, 10).until(
+                EC.visibility_of_element_located(self.ERROR_MESSAGE)
+            )
+            text = element.text.strip()
+            if "Error" in text:
+                return text
+            return None
+        except Exception:
+            return None

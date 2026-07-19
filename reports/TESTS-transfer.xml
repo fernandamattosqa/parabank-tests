@@ -1,34 +1,11 @@
-<testsuite name="transfer.Transferência de Fundos" tests="6" errors="6" failures="0" skipped="0" time="135.532439" timestamp="2026-07-17T23:36:30.590875" hostname="Condado"><testcase classname="transfer.Transferência de Fundos" name="Tentativas de transferência com diferentes entradas -- @1.1 " status="error" time="22.310904"><error type="NoSuchElementException" message="Message: Cannot locate option with value: 12345; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception">
-<![CDATA[
-Failing step: When eu informo a conta origem "12345", conta destino "54321" e valor "100.00" ... error in 10.256s
-Location: features/transfer.feature:6
-Traceback (most recent call last):
-  File "C:\Users\aemsb\OneDrive\Área de Trabalho\parabank-tests\venv\Lib\site-packages\behave\model.py", line 1991, in run
-    match.run(runner.context)
-    ~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "C:\Users\aemsb\OneDrive\Área de Trabalho\parabank-tests\venv\Lib\site-packages\behave\matchers.py", line 105, in run
-    self.func(context, *args, **kwargs)
-    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "features\steps\common_steps.py", line 114, in step_fill_transfer
-    context.transfer_page.fill_transfer(from_account, to_account, amount)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\aemsb\OneDrive\Área de Trabalho\parabank-tests\features\pages\transfer_page.py", line 35, in fill_transfer
-    Select(self.driver.find_element(*TransferLocators.FROM_ACCOUNT_INPUT)).select_by_value(str(from_account))
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\aemsb\OneDrive\Área de Trabalho\parabank-tests\venv\Lib\site-packages\selenium\webdriver\support\select.py", line 85, in select_by_value
-    raise NoSuchElementException(f"Cannot locate option with value: {value}")
-selenium.common.exceptions.NoSuchElementException: Message: Cannot locate option with value: 12345; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
-
-]]>
-</error><system-out>
+<testsuite name="transfer.Transferência de fundos" tests="3" errors="0" failures="0" skipped="0" time="24.956002" timestamp="2026-07-18T21:59:38.918586" hostname="Condado"><testcase classname="transfer.Transferência de fundos" name="Testar diferentes valores de transferência -- @1.1 " status="passed" time="7.230626"><system-out>
 <![CDATA[
 @scenario.begin
-  Scenario Outline: Tentativas de transferência com diferentes entradas -- @1.1 
-    Given que estou logado com usuário válido ... passed in 10.766s
-    And estou na página de Transfer Funds ... passed in 1.288s
-    When eu informo a conta origem "12345", conta destino "54321" e valor "100.00" ... error in 10.256s
-    And eu envio a transferência ... skipped in 0.000s
-    Then devo ver "Transfer Complete!" ... skipped in 0.000s
+  Scenario Outline: Testar diferentes valores de transferência -- @1.1 
+    Given que estou logado com usuário válido ... passed in 4.547s
+    And que estou na página de Transfer Funds ... passed in 1.637s
+    When eu realizo uma transferência de 100 da conta 12345 para a conta 67890 ... passed in 0.440s
+    Then devo ver a mensagem de sucesso da transferência ... passed in 0.606s
 
 @scenario.end
 --------------------------------------------------------------------------------
@@ -43,37 +20,14 @@ Captured stderr:
 
 
 ]]>
-</system-err></testcase><testcase classname="transfer.Transferência de Fundos" name="Tentativas de transferência com diferentes entradas -- @1.2 " status="error" time="23.988229"><error type="NoSuchElementException" message="Message: Cannot locate option with value: 12345; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception">
-<![CDATA[
-Failing step: When eu informo a conta origem "12345", conta destino "54321" e valor "999999" ... error in 10.209s
-Location: features/transfer.feature:6
-Traceback (most recent call last):
-  File "C:\Users\aemsb\OneDrive\Área de Trabalho\parabank-tests\venv\Lib\site-packages\behave\model.py", line 1991, in run
-    match.run(runner.context)
-    ~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "C:\Users\aemsb\OneDrive\Área de Trabalho\parabank-tests\venv\Lib\site-packages\behave\matchers.py", line 105, in run
-    self.func(context, *args, **kwargs)
-    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "features\steps\common_steps.py", line 114, in step_fill_transfer
-    context.transfer_page.fill_transfer(from_account, to_account, amount)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\aemsb\OneDrive\Área de Trabalho\parabank-tests\features\pages\transfer_page.py", line 35, in fill_transfer
-    Select(self.driver.find_element(*TransferLocators.FROM_ACCOUNT_INPUT)).select_by_value(str(from_account))
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\aemsb\OneDrive\Área de Trabalho\parabank-tests\venv\Lib\site-packages\selenium\webdriver\support\select.py", line 85, in select_by_value
-    raise NoSuchElementException(f"Cannot locate option with value: {value}")
-selenium.common.exceptions.NoSuchElementException: Message: Cannot locate option with value: 12345; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
-
-]]>
-</error><system-out>
+</system-err></testcase><testcase classname="transfer.Transferência de fundos" name="Testar diferentes valores de transferência -- @1.2 " status="passed" time="7.187936"><system-out>
 <![CDATA[
 @scenario.begin
-  Scenario Outline: Tentativas de transferência com diferentes entradas -- @1.2 
-    Given que estou logado com usuário válido ... passed in 12.499s
-    And estou na página de Transfer Funds ... passed in 1.281s
-    When eu informo a conta origem "12345", conta destino "54321" e valor "999999" ... error in 10.209s
-    And eu envio a transferência ... skipped in 0.000s
-    Then devo ver "Error" ... skipped in 0.000s
+  Scenario Outline: Testar diferentes valores de transferência -- @1.2 
+    Given que estou logado com usuário válido ... passed in 5.315s
+    And que estou na página de Transfer Funds ... passed in 0.778s
+    When eu realizo uma transferência de 0 da conta 12345 para a conta 67890 ... passed in 0.481s
+    Then devo ver a mensagem de sucesso da transferência ... passed in 0.614s
 
 @scenario.end
 --------------------------------------------------------------------------------
@@ -88,172 +42,14 @@ Captured stderr:
 
 
 ]]>
-</system-err></testcase><testcase classname="transfer.Transferência de Fundos" name="Tentativas de transferência com diferentes entradas -- @1.3 " status="error" time="22.640306"><error type="NoSuchElementException" message="Message: Cannot locate option with value: 12345; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception">
-<![CDATA[
-Failing step: When eu informo a conta origem "12345", conta destino "54321" e valor "0" ... error in 10.323s
-Location: features/transfer.feature:6
-Traceback (most recent call last):
-  File "C:\Users\aemsb\OneDrive\Área de Trabalho\parabank-tests\venv\Lib\site-packages\behave\model.py", line 1991, in run
-    match.run(runner.context)
-    ~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "C:\Users\aemsb\OneDrive\Área de Trabalho\parabank-tests\venv\Lib\site-packages\behave\matchers.py", line 105, in run
-    self.func(context, *args, **kwargs)
-    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "features\steps\common_steps.py", line 114, in step_fill_transfer
-    context.transfer_page.fill_transfer(from_account, to_account, amount)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\aemsb\OneDrive\Área de Trabalho\parabank-tests\features\pages\transfer_page.py", line 35, in fill_transfer
-    Select(self.driver.find_element(*TransferLocators.FROM_ACCOUNT_INPUT)).select_by_value(str(from_account))
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\aemsb\OneDrive\Área de Trabalho\parabank-tests\venv\Lib\site-packages\selenium\webdriver\support\select.py", line 85, in select_by_value
-    raise NoSuchElementException(f"Cannot locate option with value: {value}")
-selenium.common.exceptions.NoSuchElementException: Message: Cannot locate option with value: 12345; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
-
-]]>
-</error><system-out>
+</system-err></testcase><testcase classname="transfer.Transferência de fundos" name="Testar diferentes valores de transferência -- @1.3 " status="passed" time="10.537441"><system-out>
 <![CDATA[
 @scenario.begin
-  Scenario Outline: Tentativas de transferência com diferentes entradas -- @1.3 
-    Given que estou logado com usuário válido ... passed in 11.228s
-    And estou na página de Transfer Funds ... passed in 1.090s
-    When eu informo a conta origem "12345", conta destino "54321" e valor "0" ... error in 10.323s
-    And eu envio a transferência ... skipped in 0.000s
-    Then devo ver "Error" ... skipped in 0.000s
-
-@scenario.end
---------------------------------------------------------------------------------
-
-Captured stdout:
-
-
-]]>
-</system-out><system-err>
-<![CDATA[
-Captured stderr:
-
-
-]]>
-</system-err></testcase><testcase classname="transfer.Transferência de Fundos" name="Tentativas de transferência com diferentes entradas -- @1.4 " status="error" time="21.246119"><error type="NoSuchElementException" message="Message: Cannot locate option with value: 12345; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception">
-<![CDATA[
-Failing step: When eu informo a conta origem "12345", conta destino "54321" e valor "-10" ... error in 11.352s
-Location: features/transfer.feature:6
-Traceback (most recent call last):
-  File "C:\Users\aemsb\OneDrive\Área de Trabalho\parabank-tests\venv\Lib\site-packages\behave\model.py", line 1991, in run
-    match.run(runner.context)
-    ~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "C:\Users\aemsb\OneDrive\Área de Trabalho\parabank-tests\venv\Lib\site-packages\behave\matchers.py", line 105, in run
-    self.func(context, *args, **kwargs)
-    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "features\steps\common_steps.py", line 114, in step_fill_transfer
-    context.transfer_page.fill_transfer(from_account, to_account, amount)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\aemsb\OneDrive\Área de Trabalho\parabank-tests\features\pages\transfer_page.py", line 35, in fill_transfer
-    Select(self.driver.find_element(*TransferLocators.FROM_ACCOUNT_INPUT)).select_by_value(str(from_account))
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\aemsb\OneDrive\Área de Trabalho\parabank-tests\venv\Lib\site-packages\selenium\webdriver\support\select.py", line 85, in select_by_value
-    raise NoSuchElementException(f"Cannot locate option with value: {value}")
-selenium.common.exceptions.NoSuchElementException: Message: Cannot locate option with value: 12345; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
-
-]]>
-</error><system-out>
-<![CDATA[
-@scenario.begin
-  Scenario Outline: Tentativas de transferência com diferentes entradas -- @1.4 
-    Given que estou logado com usuário válido ... passed in 8.772s
-    And estou na página de Transfer Funds ... passed in 1.122s
-    When eu informo a conta origem "12345", conta destino "54321" e valor "-10" ... error in 11.352s
-    And eu envio a transferência ... skipped in 0.000s
-    Then devo ver "Error" ... skipped in 0.000s
-
-@scenario.end
---------------------------------------------------------------------------------
-
-Captured stdout:
-
-
-]]>
-</system-out><system-err>
-<![CDATA[
-Captured stderr:
-
-
-]]>
-</system-err></testcase><testcase classname="transfer.Transferência de Fundos" name="Tentativas de transferência com diferentes entradas -- @1.5 " status="error" time="21.936556"><error type="NoSuchElementException" message="Message: Cannot locate option with value: 12345; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception">
-<![CDATA[
-Failing step: When eu informo a conta origem "12345", conta destino "12345" e valor "10" ... error in 10.275s
-Location: features/transfer.feature:6
-Traceback (most recent call last):
-  File "C:\Users\aemsb\OneDrive\Área de Trabalho\parabank-tests\venv\Lib\site-packages\behave\model.py", line 1991, in run
-    match.run(runner.context)
-    ~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "C:\Users\aemsb\OneDrive\Área de Trabalho\parabank-tests\venv\Lib\site-packages\behave\matchers.py", line 105, in run
-    self.func(context, *args, **kwargs)
-    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "features\steps\common_steps.py", line 114, in step_fill_transfer
-    context.transfer_page.fill_transfer(from_account, to_account, amount)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\aemsb\OneDrive\Área de Trabalho\parabank-tests\features\pages\transfer_page.py", line 35, in fill_transfer
-    Select(self.driver.find_element(*TransferLocators.FROM_ACCOUNT_INPUT)).select_by_value(str(from_account))
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\aemsb\OneDrive\Área de Trabalho\parabank-tests\venv\Lib\site-packages\selenium\webdriver\support\select.py", line 85, in select_by_value
-    raise NoSuchElementException(f"Cannot locate option with value: {value}")
-selenium.common.exceptions.NoSuchElementException: Message: Cannot locate option with value: 12345; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
-
-]]>
-</error><system-out>
-<![CDATA[
-@scenario.begin
-  Scenario Outline: Tentativas de transferência com diferentes entradas -- @1.5 
-    Given que estou logado com usuário válido ... passed in 10.396s
-    And estou na página de Transfer Funds ... passed in 1.265s
-    When eu informo a conta origem "12345", conta destino "12345" e valor "10" ... error in 10.275s
-    And eu envio a transferência ... skipped in 0.000s
-    Then devo ver "Error" ... skipped in 0.000s
-
-@scenario.end
---------------------------------------------------------------------------------
-
-Captured stdout:
-
-
-]]>
-</system-out><system-err>
-<![CDATA[
-Captured stderr:
-
-
-]]>
-</system-err></testcase><testcase classname="transfer.Transferência de Fundos" name="Tentativas de transferência com diferentes entradas -- @1.6 " status="error" time="23.410325"><error type="NoSuchElementException" message="Message: Cannot locate option with value: 99999; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception">
-<![CDATA[
-Failing step: When eu informo a conta origem "99999", conta destino "54321" e valor "10" ... error in 10.283s
-Location: features/transfer.feature:6
-Traceback (most recent call last):
-  File "C:\Users\aemsb\OneDrive\Área de Trabalho\parabank-tests\venv\Lib\site-packages\behave\model.py", line 1991, in run
-    match.run(runner.context)
-    ~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "C:\Users\aemsb\OneDrive\Área de Trabalho\parabank-tests\venv\Lib\site-packages\behave\matchers.py", line 105, in run
-    self.func(context, *args, **kwargs)
-    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "features\steps\common_steps.py", line 114, in step_fill_transfer
-    context.transfer_page.fill_transfer(from_account, to_account, amount)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\aemsb\OneDrive\Área de Trabalho\parabank-tests\features\pages\transfer_page.py", line 35, in fill_transfer
-    Select(self.driver.find_element(*TransferLocators.FROM_ACCOUNT_INPUT)).select_by_value(str(from_account))
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\aemsb\OneDrive\Área de Trabalho\parabank-tests\venv\Lib\site-packages\selenium\webdriver\support\select.py", line 85, in select_by_value
-    raise NoSuchElementException(f"Cannot locate option with value: {value}")
-selenium.common.exceptions.NoSuchElementException: Message: Cannot locate option with value: 99999; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
-
-]]>
-</error><system-out>
-<![CDATA[
-@scenario.begin
-  Scenario Outline: Tentativas de transferência com diferentes entradas -- @1.6 
-    Given que estou logado com usuário válido ... passed in 11.931s
-    And estou na página de Transfer Funds ... passed in 1.196s
-    When eu informo a conta origem "99999", conta destino "54321" e valor "10" ... error in 10.283s
-    And eu envio a transferência ... skipped in 0.000s
-    Then devo ver "Error" ... skipped in 0.000s
+  Scenario Outline: Testar diferentes valores de transferência -- @1.3 
+    Given que estou logado com usuário válido ... passed in 8.067s
+    And que estou na página de Transfer Funds ... passed in 1.295s
+    When eu realizo uma transferência de @@ da conta 12345 para a conta 67890 ... passed in 0.559s
+    Then devo ver a mensagem de erro da transferência ... passed in 0.617s
 
 @scenario.end
 --------------------------------------------------------------------------------

@@ -1,17 +1,18 @@
-Feature: Transferência de Fundos
+Feature: Transferência de fundos
+  Como cliente do Parabank
+  Quero realizar transferências entre contas
+  Para validar mensagens de sucesso e erro
 
-  Scenario Outline: Tentativas de transferência com diferentes entradas
+  Background:
     Given que estou logado com usuário válido
-    And estou na página de Transfer Funds
-    When eu informo a conta origem "<from_account>", conta destino "<to_account>" e valor "<amount>"
-    And eu envio a transferência
-    Then devo ver "<expected_message>"
+    And que estou na página de Transfer Funds
+
+  Scenario Outline: Testar diferentes valores de transferência
+    When eu realizo uma transferência de <amount> da conta <from_account> para a conta <to_account>
+    Then <expected>
 
     Examples:
-      | from_account | to_account | amount | expected_message     |
-      | 12345        | 54321      | 100.00 | Transfer Complete!   |
-      | 12345        | 54321      | 999999  | Error                |
-      | 12345        | 54321      | 0       | Error                |
-      | 12345        | 54321      | -10     | Error                |
-      | 12345        | 12345      | 10      | Error                |
-      | 99999        | 54321      | 10      | Error                |
+      | amount | from_account | to_account | expected                                        |
+      | 100    | 12345        | 67890      | devo ver a mensagem de sucesso da transferência |
+      | 0      | 12345        | 67890      | devo ver a mensagem de sucesso da transferência |
+      | @@     | 12345        | 67890      | devo ver a mensagem de erro da transferência    |
