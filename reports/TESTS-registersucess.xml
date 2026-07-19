@@ -1,16 +1,16 @@
-<testsuite name="registersucess.Cadastro bem-sucedido no ParaBank" tests="1" errors="0" failures="1" skipped="0" time="5.896732" timestamp="2026-07-18T22:39:10.392960" hostname="Condado"><testcase classname="registersucess.Cadastro bem-sucedido no ParaBank" name="Registro com dados válidos" status="failed" time="5.896732"><failure type="AssertionError" message="Esperado 'Your account was created successfully', mas obtido 'Your account was created successfully. You are now logged in.'">
+<testsuite name="registersucess.Cadastro bem-sucedido no ParaBank" tests="1" errors="0" failures="1" skipped="0" time="4.808026" timestamp="2026-07-18T23:06:32.819552" hostname="Condado"><testcase classname="registersucess.Cadastro bem-sucedido no ParaBank" name="Registro com dados válidos" status="failed" time="4.808026"><failure type="AssertionError" message="Esperado 'Your account was created successfully', mas obtido 'If you have an account with us you can sign-up for free instant online access. You will have to provide some personal information.'">
 <![CDATA[
-Failing step: Then devo ver a mensagem de sucesso "Your account was created successfully" ... failed in 0.115s
+Failing step: Then devo ver a mensagem de sucesso "Your account was created successfully" ... failed in 0.117s
 Location: features/registersucess.feature:9
-ASSERT FAILED: Esperado 'Your account was created successfully', mas obtido 'Your account was created successfully. You are now logged in.']]>
+ASSERT FAILED: Esperado 'Your account was created successfully', mas obtido 'If you have an account with us you can sign-up for free instant online access. You will have to provide some personal information.']]>
 </failure><system-out>
 <![CDATA[
 @scenario.begin
   Scenario: Registro com dados válidos
-    Given que estou na página de registro ... passed in 2.648s
-    When eu preencho o formulário com dados válidos ... passed in 2.218s
-    And eu envio o formulário de registro ... passed in 0.917s
-    Then devo ver a mensagem de sucesso "Your account was created successfully" ... failed in 0.115s
+    Given que estou na página de registro ... passed in 1.626s
+    When eu preencho o formulário com dados válidos ... passed in 2.309s
+    And eu envio o formulário de registro ... passed in 0.756s
+    Then devo ver a mensagem de sucesso "Your account was created successfully" ... failed in 0.117s
 
 @scenario.end
 --------------------------------------------------------------------------------

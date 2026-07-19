@@ -1,11 +1,11 @@
-<testsuite name="login.Login no ParaBank" tests="4" errors="0" failures="2" skipped="0" time="37.434714" timestamp="2026-07-18T22:17:19.263094" hostname="Condado"><testcase classname="login.Login no ParaBank" name="Tentativas de login com diferentes entradas -- @1.1 " status="passed" time="3.814175"><system-out>
+<testsuite name="login.Login no ParaBank" tests="4" errors="0" failures="2" skipped="0" time="39.14145" timestamp="2026-07-18T23:06:22.510980" hostname="Condado"><testcase classname="login.Login no ParaBank" name="Tentativas de login com diferentes entradas -- @1.1 " status="passed" time="5.876774"><system-out>
 <![CDATA[
 @scenario.begin
   Scenario Outline: Tentativas de login com diferentes entradas -- @1.1 
-    Given que estou na página de login ... passed in 1.911s
-    When eu informo o usuário "Fernanda12" e senha "100910" ... passed in 0.370s
-    And eu clico em logar ... passed in 1.380s
-    Then devo ver "Accounts Overview" ... passed in 0.154s
+    Given que estou na página de login ... passed in 3.751s
+    When eu informo o usuário "Fernanda12" e senha "100910" ... passed in 0.380s
+    And eu clico em logar ... passed in 1.601s
+    Then devo ver "Accounts Overview" ... passed in 0.146s
 
 @scenario.end
 --------------------------------------------------------------------------------
@@ -20,19 +20,19 @@ Captured stderr:
 
 
 ]]>
-</system-err></testcase><testcase classname="login.Login no ParaBank" name="Tentativas de login com diferentes entradas -- @1.2 " status="failed" time="13.787474"><failure type="AssertionError" message="Esperado 'Error!', mas obtido ''">
+</system-err></testcase><testcase classname="login.Login no ParaBank" name="Tentativas de login com diferentes entradas -- @1.2 " status="failed" time="14.420848"><failure type="AssertionError" message="Esperado 'Error!', mas obtido ''">
 <![CDATA[
-Failing step: Then devo ver "Error!" ... failed in 10.400s
+Failing step: Then devo ver "Error!" ... failed in 10.517s
 Location: features/login.feature:7
 ASSERT FAILED: Esperado 'Error!', mas obtido '']]>
 </failure><system-out>
 <![CDATA[
 @scenario.begin
   Scenario Outline: Tentativas de login com diferentes entradas -- @1.2 
-    Given que estou na página de login ... passed in 1.834s
-    When eu informo o usuário "usuario_invalido" e senha "100910" ... passed in 0.441s
-    And eu clico em logar ... passed in 1.112s
-    Then devo ver "Error!" ... failed in 10.400s
+    Given que estou na página de login ... passed in 2.281s
+    When eu informo o usuário "usuario_invalido" e senha "100910" ... passed in 0.413s
+    And eu clico em logar ... passed in 1.210s
+    Then devo ver "Error!" ... failed in 10.517s
 
 @scenario.end
 --------------------------------------------------------------------------------
@@ -47,19 +47,19 @@ Captured stderr:
 
 
 ]]>
-</system-err></testcase><testcase classname="login.Login no ParaBank" name="Tentativas de login com diferentes entradas -- @1.3 " status="failed" time="14.010991"><failure type="AssertionError" message="Esperado 'Error!', mas obtido ''">
+</system-err></testcase><testcase classname="login.Login no ParaBank" name="Tentativas de login com diferentes entradas -- @1.3 " status="failed" time="13.827559"><failure type="AssertionError" message="Esperado 'Error!', mas obtido ''">
 <![CDATA[
-Failing step: Then devo ver "Error!" ... failed in 10.042s
+Failing step: Then devo ver "Error!" ... failed in 10.334s
 Location: features/login.feature:7
 ASSERT FAILED: Esperado 'Error!', mas obtido '']]>
 </failure><system-out>
 <![CDATA[
 @scenario.begin
   Scenario Outline: Tentativas de login com diferentes entradas -- @1.3 
-    Given que estou na página de login ... passed in 2.260s
-    When eu informo o usuário "nonexistentuser" e senha "100910" ... passed in 0.457s
-    And eu clico em logar ... passed in 1.252s
-    Then devo ver "Error!" ... failed in 10.042s
+    Given que estou na página de login ... passed in 1.912s
+    When eu informo o usuário "nonexistentuser" e senha "100910" ... passed in 0.438s
+    And eu clico em logar ... passed in 1.144s
+    Then devo ver "Error!" ... failed in 10.334s
 
 @scenario.end
 --------------------------------------------------------------------------------
@@ -74,14 +74,14 @@ Captured stderr:
 
 
 ]]>
-</system-err></testcase><testcase classname="login.Login no ParaBank" name="Logout do usuário" status="passed" time="5.822074"><system-out>
+</system-err></testcase><testcase classname="login.Login no ParaBank" name="Logout do usuário" status="passed" time="5.016268"><system-out>
 <![CDATA[
 @scenario.begin
   Scenario: Logout do usuário
-    Given que estou na página de login ... passed in 2.585s
-    When eu informo o usuário "Fernanda12" e senha "100910" ... passed in 0.410s
-    And eu clico em logar ... passed in 1.487s
-    Then devo realizar logout ... passed in 1.340s
+    Given que estou na página de login ... passed in 2.269s
+    When eu informo o usuário "Fernanda12" e senha "100910" ... passed in 0.418s
+    And eu clico em logar ... passed in 1.110s
+    Then devo realizar logout ... passed in 1.220s
 
 @scenario.end
 --------------------------------------------------------------------------------
