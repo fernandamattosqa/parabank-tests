@@ -8,11 +8,11 @@ Feature: Transferência de fundos
     And que estou na página de Transfer Funds
 
   Scenario Outline: Testar diferentes valores de transferência
-    When eu realizo uma transferência de <amount> da conta <from_account> para a conta <to_account>
+    When eu realizo uma transferência de "<amount>" entre contas disponíveis
     Then <expected>
 
     Examples:
-      | amount | from_account | to_account | expected                                        |
-      | 100    | 12345        | 67890      | devo ver a mensagem de sucesso da transferência |
-      | 0      | 12345        | 67890      | devo ver a mensagem de sucesso da transferência |
-      | @@     | 12345        | 67890      | devo ver a mensagem de erro da transferência    |
+      | amount | expected                                        |
+      | 100    | devo ver a mensagem de sucesso da transferência |
+      | -50    | devo ver a mensagem de erro da transferência    |
+      | abc    | devo ver a mensagem de erro da transferência    |

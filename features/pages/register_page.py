@@ -1,5 +1,7 @@
 from locators.register_locators import RegisterLocators
 from .base_page import BasePage
+from selenium.common.exceptions import TimeoutException
+from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
@@ -28,7 +30,23 @@ class RegisterPage(BasePage):
         self.click(RegisterLocators.REGISTER_BUTTON)
 
     def get_success_message(self):
+        try:
+            WebDriverWait(self.driver, 10).until(
+                EC.text_to_be_present_in_element(RegisterLocators.SUCCESS_TITLE, "Welcome")
+            )
+        except TimeoutException:
+            return ""
+
         element = WebDriverWait(self.driver, 10).until(
             EC.visibility_of_element_located(RegisterLocators.SUCCESS_MESSAGE)
         )
         return element.text.strip()
+
+    def get_validation_errors(self):
+        error_elements = self.driver.find_elements(By.CSS_SELECTOR, "#rightPanel span.error")
+        errors = []
+        for element in error_elements:
+            text = element.text.strip()
+            if text:
+                errors.append(text)
+        return errors

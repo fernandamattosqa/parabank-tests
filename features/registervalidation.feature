@@ -4,12 +4,12 @@ Feature: Cadastro no ParaBank
 
   Scenario Outline: Registro com diferentes validações de entrada
     Given que estou na página de registro
-    When eu preencho o formulário com os dados:<first_name>,<last_name>,<address>,<city>,<state>,<zip_code>,<phone>,<ssn>,<username>,<password>
+    When eu preencho o formulário inválido com "<first_name>", "<last_name>", "<address>", "<city>", "<state>", "<zip_code>", "<phone>", "<ssn>", "<username>", "<password>", "<confirm>"
     And eu envio o formulário de registro
-    Then devo ver "<expected_message>"
+    Then devo ver o erro de validação "<expected_error>"
 
     Examples:
-      | first_name | last_name | address          | city        | state | zip_code  | phone        | ssn      | username    | password | expected_message                               |
-      |            | Teste     | Rua Exemplo 123  | Santo André | SP    | 09000-000 | 11999999999  | 123456789 |             |          | Mensagens de validação nos campos obrigatórios |
-      | Fernanda   | Teste     | Rua Exemplo 123  | Santo André | SP    | 09000-000 | abc          | 123456789 | useremail   | senha123 | Mensagens de validação nos campos obrigatórios |
-      | Fernanda   | Teste     | Rua Exemplo 123  | Santo André | SP    | 09000-000 | 11999999999  | 123456789 | userweak    | 123      | Mensagens de validação nos campos obrigatórios |
+      | first_name | last_name | address         | city        | state | zip_code  | phone       | ssn        | username | password | confirm   | expected_error             |
+      | __EMPTY__  | Teste     | Rua Exemplo 123 | Santo André | SP    | 09000-000 | 11999999999 | 123-45-6789| qauser01 | senha123 | senha123  | First name is required.    |
+      | Fernanda   | Teste     | Rua Exemplo 123 | Santo André | SP    | 09000-000 | 11999999999 | 123-45-6789| __EMPTY__| senha123 | senha123  | Username is required.      |
+      | Fernanda   | Teste     | Rua Exemplo 123 | Santo André | SP    | 09000-000 | 11999999999 | 123-45-6789| qauser03 | senha123 | senha999  | Passwords did not match.   |

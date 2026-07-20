@@ -13,4 +13,5 @@ class RegisterLocators:
     PASSWORD = (By.ID, "customer.password")
     CONFIRM = (By.ID, "repeatedPassword")
     REGISTER_BUTTON = (By.CSS_SELECTOR, "input[value='Register']")
+    SUCCESS_TITLE = (By.CSS_SELECTOR, "#rightPanel h1.title")
     SUCCESS_MESSAGE = (By.CSS_SELECTOR, "#rightPanel > p")

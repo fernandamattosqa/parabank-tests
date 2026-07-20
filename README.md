@@ -10,6 +10,7 @@ Este projeto é uma suíte de automação de testes web em Python, utilizando Be
 - WebDriverWait para esperas explícitas
 - Logging e screenshots automáticos em caso de falha
 
+<<<<<<< HEAD
 
 # 🧪 Testes Automatizados ParaBank
 
@@ -39,6 +40,27 @@ Este projeto contém testes automatizados para o site [ParaBank](https://paraban
    ```bash
    pip install -r requirements.txt
 
+=======
+## Estrutura do projeto
+```text
+parabank-tests/
+├── behave.ini
+├── config/
+├── features/
+│   ├── login.feature
+│   ├── registersucess.feature
+│   ├── registervalidation.feature
+│   ├── transfer.feature
+│   ├── pages/
+│   └── steps/
+├── locators/
+├── reports/
+├── scripts/
+├── utils/
+├── requirements.txt
+└── README.md
+```
+>>>>>>> 87e402a (Improve BDD coverage and stabilize parabank automation flows)
 
 ## Requisitos
 - Python 3.10+
@@ -47,6 +69,14 @@ Este projeto contém testes automatizados para o site [ParaBank](https://paraban
 
 ## Instalação
 ```bash
+python -m venv venv
+
+# Windows (PowerShell)
+venv\Scripts\Activate.ps1
+
+# Linux/macOS
+source venv/bin/activate
+
 python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
 ```

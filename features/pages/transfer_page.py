@@ -5,12 +5,12 @@ from features.pages.base_page import BasePage
 
 class TransferPage(BasePage):
     LINK_TRANSFER = (By.CSS_SELECTOR, "a[href='transfer.htm']")
-    AMOUNT_INPUT = (By.ID, "amount")  # ✅ corrigido
+    AMOUNT_INPUT = (By.ID, "amount")
     FROM_ACCOUNT_INPUT = (By.NAME, "fromAccountId")
     TO_ACCOUNT_INPUT = (By.NAME, "toAccountId")
     TRANSFER_BUTTON = (By.CSS_SELECTOR, "input[type='submit'][value='Transfer']")
-    SUCCESS_MESSAGE = (By.CSS_SELECTOR, "#showResult h1.title")  # ✅ painel de sucesso
-    ERROR_MESSAGE   = (By.CSS_SELECTOR, "#showError h1.title")   # ✅ painel de erro
+    SUCCESS_MESSAGE = (By.CSS_SELECTOR, "#showResult h1.title")
+    ERROR_MESSAGE   = (By.CSS_SELECTOR, "#showError h1.title")
 
     def open_transfer_page(self):
         """Abre a página de Transfer Funds"""

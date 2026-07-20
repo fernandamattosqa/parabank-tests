@@ -6,9 +6,8 @@ def step_open_transfer_page(context):
     context.transfer_page = TransferPage(context.driver, context.base_url)
     context.transfer_page.open_transfer_page()
 
-@when('eu realizo uma transferência de {amount} da conta {from_account} para a conta {to_account}')
-def step_fill_transfer(context, amount, from_account, to_account):
-    # No HTML só existe o campo "amount", então usamos apenas ele
+@when('eu realizo uma transferência de "{amount}" entre contas disponíveis')
+def step_fill_transfer(context, amount):
     context.transfer_page.fill_transfer(amount)
     context.transfer_page.submit()
 
